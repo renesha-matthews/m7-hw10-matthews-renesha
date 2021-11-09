@@ -9,10 +9,12 @@ var textarea = document.querySelector('textarea')
 // YOUR CODE HERE
 
 // Retrieve name from cookies
-nameSpan.onblur = function() {
-  document.cookie = 'username' + nameSpan.textContent
-}
-
+cookieStore.get('username')
+    .then(function(cookieObj) {
+      if (cookieObj) {
+        nameSpan.textContent = cookieObj.value
+      }
+    })
 
 // Retrieve note content from local storage
 var noteContent = localStorage.getItem('notes')
@@ -28,12 +30,9 @@ formEl.onsubmit = function(e) {
   // YOUR CODE HERE
 
   // save name element's content to cookies
-  // cookieStore.get('nameSpan')
-  //   .then(function(cookieObj) {
-  //     if (cookieObj) {
-  //       nameSpan.textContent = cookieObj.value
-  //     }
-  //   })
+  nameSpan.onblur = function() {
+    document.cookie = 'username=' + nameSpan.textContent
+  }
   
 
   // save textarea's content to localstorage
@@ -46,8 +45,11 @@ formEl.onsubmit = function(e) {
 
 clear.onclick = function() {
   // Clear textarea's value
+  textarea.value = ''
+  
+
   // Clear localstorage's content
-  // YOUR CODE HERE
+  localStorage.clear()
 
   // triggers thumbs up animation
   this.classList.add('emoji')
