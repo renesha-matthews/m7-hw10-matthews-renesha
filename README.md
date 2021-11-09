@@ -1,7 +1,8 @@
 ## Issues
+I had no issues.
 
 ## Resources
-https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear
+* [Storage.clear()](https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear)
 
-https://stackoverflow.com/questions/15968911/how-to-clear-text-area-with-a-button-in-html-using-javascript/15968947
+* [Clear textarea with button](https://stackoverflow.com/questions/15968911/how-to-clear-text-area-with-a-button-in-html-using-javascript/15968947)
 
