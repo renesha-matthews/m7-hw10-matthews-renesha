@@ -10,11 +10,17 @@ var textarea = document.querySelector('textarea')
 
 // Retrieve name from cookies
 cookieStore.get('username')
-    .then(function(cookieObj) {
-      if (cookieObj) {
-        nameSpan.textContent = cookieObj.value
-      }
-    })
+.then(function(cookieObj) {
+  if (cookieObj) {
+    nameSpan.textContent = cookieObj.value
+  }
+})
+
+// save name element's content to cookies
+// nameSpan.onblur = function() {
+//   document.cookie = 'username=' + nameSpan.textContent + ';'
+// }
+
 
 // Retrieve note content from local storage
 var noteContent = localStorage.getItem('notes')
@@ -27,13 +33,8 @@ formEl.onsubmit = function(e) {
   // prevents form submission
   e.preventDefault()
   
-  // YOUR CODE HERE
-
   // save name element's content to cookies
-  nameSpan.onblur = function() {
-    document.cookie = 'username=' + nameSpan.textContent
-  }
-  
+  document.cookie = 'username=' + nameSpan.textContent + ';'
 
   // save textarea's content to localstorage
   var textAreaContent = textarea.value
