@@ -16,11 +16,6 @@ cookieStore.get('username')
   }
 })
 
-// save name element's content to cookies
-// nameSpan.onblur = function() {
-//   document.cookie = 'username=' + nameSpan.textContent + ';'
-// }
-
 
 // Retrieve note content from local storage
 var noteContent = localStorage.getItem('notes')
